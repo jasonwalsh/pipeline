@@ -22,7 +22,8 @@ resource "aws_key_pair" "default" {
 
 resource "null_resource" "default" {
   triggers {
-    key_name = "${aws_key_pair.default.key_name}"
+    key_name          = "${aws_key_pair.default.key_name}"
+    security_group_id = "${aws_security_group.allow_ssh.name}"
   }
 
   provisioner "local-exec" {

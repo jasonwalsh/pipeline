@@ -21,5 +21,9 @@ Vagrant.configure("2") do |config|
     override.ssh.username = "ubuntu"
   end
 
-  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "provisioning/playbook.yml"
+  end
+
+  config.vm.synced_folder ".", "/vagrant", type: "rsync"
 end
