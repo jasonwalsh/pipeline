@@ -26,6 +26,9 @@ The [main.tf](main.tf) file wraps the Packer [build](https://packer.io/docs/comm
 
 If the Terraform provisioning is successful, it creates a file named `packer-manifest.json` which contains the AMI ID of the artifact created via Packer. The [Vagrantfile](Vagrantfile) then uses this data, as well as data from the Terraform state to create an EC2 instance using the [vagrant-aws](https://github.com/mitchellh/vagrant-aws) provider. To create a new EC2 instance, invoke the following command:
 
+    $ vagrant up
+    $ vagrant ssh
+
 ### Environment Variables
 
 The following environment variables are required to use this repository.
