@@ -1,9 +1,12 @@
 require 'json'
 
+Vagrant.require_version ">= 2.2.0"
+
 Vagrant.configure("2") do |config|
   manifest = JSON.parse(File.read("packer-manifest.json"))
   aws_ami = manifest["builds"][-1]["artifact_id"].split(":")[-1]
 
+  # Ensure that the user has the `vagrant-aws` plugin installed.
   config.vagrant.plugins = "vagrant-aws"
   config.vm.box = "dummy"
   config.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"

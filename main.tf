@@ -1,3 +1,7 @@
+terraform {
+  required_version = ">= 0.11.10"
+}
+
 provider "aws" {}
 
 resource "aws_security_group" "allow_ssh" {
