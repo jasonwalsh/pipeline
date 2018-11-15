@@ -36,4 +36,5 @@ The following environment variables are required to use this repository.
 | Name                    | Required           |
 |-------------------------|:------------------:|
 | `AWS_ACCESS_KEY_ID`     | :heavy_check_mark: |
+| `AWS_DEFAULT_REGION`    | :heavy_check_mark: |
 | `AWS_SECRET_ACCESS_KEY` | :heavy_check_mark: | 
