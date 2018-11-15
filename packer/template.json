@@ -15,7 +15,7 @@
         ]
       },
       "ssh_keypair_name": "{{ user `ssh_keypair_name` }}",
-      "ssh_private_key_file": "{{ user `home` }}/.ssh/id_rsa",
+      "ssh_private_key_file": "{{ user `ssh_private_key_file` }}",
       "ssh_username": "{{ user `ssh_username` }}",
       "type": "amazon-ebs"
     }
@@ -39,6 +39,7 @@
     "home": "{{ env `HOME` }}",
     "instance_type": "t2.micro",
     "ssh_keypair_name": "",
+    "ssh_private_key_file": "{{ user `home` }}/.ssh/id_rsa",
     "ssh_username": "ubuntu"
   }
 }
