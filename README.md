@@ -17,7 +17,7 @@ The purpose of this repository is to demonstrate a fully automated image deploym
 
 ## Usage
 
-This repository builds Amazon Machine Images (AMIs) using software called Packer. After Packer finishes the build, it uploads an artifact (AMI) to the AWS account associated with the AWS Access Key ID and AWS Secret Access Key provided by the user. The AMI is then available for use by Vagrant.
+This repository builds Amazon Machine Images (AMIs) using software called [Packer](https://packer.io/). After Packer finishes the build, it uploads an artifact (AMI) to the AWS account associated with the AWS Access Key ID and AWS Secret Access Key provided by the user. The AMI is then available for use by Vagrant.
 
 The [main.tf](main.tf) file wraps the Packer [build](https://packer.io/docs/commands/build.html) command in a Terraform configuration file and creates the security group used via the Vagrant AWS provider to allow incoming SSH connections.
 

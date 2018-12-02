@@ -2,6 +2,8 @@ terraform {
   required_version = ">= 0.11.10"
 }
 
+// Configure the provider using environment variables.
+// https://docs.aws.amazon.com/cli/latest/userguide/cli-environment.html
 provider "aws" {}
 
 resource "aws_security_group" "allow_ssh" {
@@ -21,7 +23,7 @@ resource "aws_security_group" "allow_ssh" {
 }
 
 resource "aws_key_pair" "default" {
-  public_key = "${file("~/.ssh/id_rsa.pub")}"
+  public_key = "${file("${pathexpand("~/.ssh/id_rsa.pub")}")}"
 }
 
 resource "null_resource" "default" {
